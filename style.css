@@ -1,0 +1,1088 @@
+body {
+    margin: 10px;
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    width: 90%;
+    margin: auto;
+    
+}
+
+
+
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+
+
+  
+
+
+.container {
+    display: flex;
+}
+
+.obgekt {
+  display: flex;
+	width: auto;
+  height: 500px;
+  margin: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #a76707;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+            0 0 20px rgba(0, 0, 0, 0.1),
+            0 0 30px rgba(0, 0, 0, 0.1),
+            0 0 40px rgba(0, 0, 0, 0.1),
+            0 0 50px rgba(0, 0, 0, 0.1);
+
+    transition: box-shadow 0.3s ease;
+    text-align: center; /* Добавлено свойство для анимации теней */
+}
+
+.img-logo {
+    height: 50px;
+    flex: 1;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px; /* Ширина меню занимает 100% */
+    margin-left: -11.5%;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: static;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(42, 1, 1);
+    position: relative;
+    font-size: 20px;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(193, 39, 40);
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+        header:hover {
+          box-shadow: 
+              -10px -10px 15px rgba(70,70,70,0.2),
+              10px 10px 15px rgba(70,70,70,0.2),
+              -10px 10px 15px rgba(70,70,70,0.2),
+              10px -10px 15px rgba(70,70,70,0.2),
+              0 0 20px rgba(70,70,70,0.2); /* Дополнительная тень при наведении */
+      
+        }      
+      
+
+.menu-toggle {
+    display: none; /* Начально скрываем кнопку на десктопе */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+}
+
+.slider {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+	margin-top: 10px;
+	display: flex;
+	transition: transform 0.5s ease; 
+  
+  }
+
+  .container-ulg {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.img-ulg {
+
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+            0 0 20px rgba(0, 0, 0, 0.1),
+            0 0 30px rgba(0, 0, 0, 0.1),
+            0 0 40px rgba(0, 0, 0, 0.1),
+            0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* цвет текста */
+    font-size: 2vw; /* размер шрифта */
+    font-family: Arial, sans-serif; /* шрифт */
+    text-align: center; /* выравнивание текста по центру */
+    z-index: 2; /* чтобы текст оказался выше изображения */
+}
+
+.coworking {
+  font-size: 3vw;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 720px){
+    .coworking{
+        font-size: 3vw;
+    }
+    .text-overlay{
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+	.container {
+        flex-direction: column;
+    }
+
+	.goes-text {
+        position: relative; /* Сброс позиции абсолютного положения */
+        top: auto; /* Сброс вертикального смещения */
+        right: auto; /* Сброс горизонтального смещения */
+        text-align: center; /* Выравнивание по центру */
+        margin-top: 20px; /* Задайте необходимое смещение сверху */
+		transform: translate(0);
+    }
+
+	.slider {
+        width: 100%; /* Занимает всю ширину на мобильных устройствах */
+        height: 500px; /* Высота слайдера на мобильных устройствах */
+        position: relative;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .goes-text {
+        width: 100%; /* Занимает всю ширину на мобильных устройствах */
+        text-align: center; /* Выравнивание по центру для мобильных устройств */
+    }
+	nav {
+        position: fixed;
+        top: 10px;
+        left: 10px; /* Изменено справа на слева */
+        bottom: 10px;
+        width: 80%;
+        height: 100%;
+        margin-left: -10px; /* Изменено справа на слева */
+        background-color: #fff;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        z-index: 99;
+        transform: translateX(-100%); /* Изменено справа на слева */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+	
+	nav.active {
+		transform: translateX(0);
+		overflow: auto;
+	}
+	
+
+    nav.active {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: -18%;
+        right: -1%;
+        margin: 10px;
+        z-index: 2;
+    }
+
+    header {
+        position: relative;
+    }
+
+    nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		text-align: center; /* Выравнивание текста по центру */
+	}
+	
+	nav ul li {
+		margin-bottom: 24px;
+		position: relative;
+	}
+	
+	nav ul li::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: rgb(125,76,27);
+		bottom: -11px; /* Расстояние от полосы до текста пункта меню */
+		left: 0;
+	}
+	
+	
+}
+
+
+.container-ulg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    background-color: rgba(0, 0, 0, 0.3); /* Прозрачный черный цвет */
+    z-index: 2;
+}
+
+.img-ulg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: relative; /* Чтобы позволить z-index работать */
+    z-index: 1; /* Чтобы изображение находилось над фоном */
+}
+
+
+/*.begraund-text {
+    display: inline;
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 5px;
+}
+*/
+
+
+.video-text-container {
+    position: relative;
+    width: 100%; /* Максимальная ширина блока видео */
+    margin: auto; /* Центрирование блока видео */
+    display: flex;
+    /* Добавлено свойство для установки элементов в строку */
+}
+
+/* .video {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #c9c8c8 url('img/free-icon-play-button-109197.png') no-repeat center;
+    background-size: 15%;
+    transition: background-size 0.3s ease; 
+    border-radius: 10px;   
+}
+
+.video:hover {
+    cursor: pointer;
+    background-size: 17%;
+} */
+
+.container-video {
+    width: 50%;
+    height: 500px;
+    position: relative;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    margin: auto; 
+    font-size: 30px;
+    
+}
+
+.text-container > p {
+    margin: 10px 0;
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #c3242f;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #c3242f;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.button-container a:hover {
+    background-color: #c3242f;
+    color: #ffffff;
+}
+
+
+
+.video-js {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.info-h2-video {
+    text-align: center;
+}
+
+.button-container {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zoomable-image {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.zoomable-image img {
+    transition: transform 0.5s ease;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.zoomable-image:hover img {
+    transform: scale(1.1);
+}
+
+body.overlay-open {
+    overflow: hidden; /* Фиксируем прокрутку, когда открыто изображение */
+}
+
+.overlay-open #overlay {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+}
+
+.overlay-open #overlay .overlay-content {
+    opacity: 1;
+}
+
+.overlay-open #overlay #zoomed-in-image {
+    transform: scale(1);
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: background-color 0.4s ease, opacity 0.4s ease;
+    z-index: 1000;
+}
+
+.overlay-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4 ease;
+}
+
+#zoomed-in-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transform: scale(0.7); /* Начальный масштаб изображения */
+    transition: transform 0.4s ease;
+}
+
+
+#videoPlayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h4 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.list-container {
+    text-align: center;
+}
+
+.list-container {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    right: 10%;
+    font-size: 1.6vw;/* Allow items to wrap to the next line */
+}
+
+.list-item {
+    flex: 0 0 20%; /* Each item takes up 20% of the container width (four items in a row) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Adjust the margin as needed */
+}
+
+.list-item img {
+    margin-bottom: 5px;
+    width: 5vw;
+   
+    transition: filter 0.3s ease;
+}
+
+.list-item img:hover {
+    filter: grayscale(100%);
+}
+
+@media only screen and (max-width: 822px) {
+    .video-text-container {
+        display: block;
+    }
+    .container-video {
+        width: 100% ; /* добавлено важное значение для усиления стиля */
+        box-sizing: border-box; /* Добавлено для учета отступов и границ */
+    }
+
+    .text-container {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование элементов по вертикали внутри .text-container */
+    }
+    .text-container p {
+        font-size: 18px;
+    }
+
+    .button-container a {
+        font-size: 16px;
+    }
+    .button-container {
+        left: 0;
+        transform: translateX(0%);
+    }
+    .photo-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    ul {
+        font-size: 12px;
+        width: 100%;
+        position: static;
+    }
+}
+
+h5 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-map {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+    position: relative;
+    height: 600px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+
+
+.container-contact {
+    width: 50%;
+    
+    height: auto;
+    margin: auto; /* Center the entire container horizontally */
+}
+
+.logo-text-info {
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.6vw;
+    width: 100%; /* Make the width 100% to inherit from the parent */
+    background-color: #ffffff;
+}
+
+/* Centering the list items and adjusting styles */
+.logo-text-info ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Display children elements in a column */
+    
+    
+}
+
+.ul-con{
+    width: 70%;
+    
+}
+
+.logo-text-info li {
+    margin-bottom: 10px;
+    text-align: left; /* Left-align text within list items */
+}
+
+/* Centering the link items */
+.logo-text-info a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.icon-map,
+.icon-tel,
+.icon-email {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px; /* Adding some spacing between icon and text */
+}
+
+.logo-catt-con {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    border-bottom: 1px solid #c3242e;
+}
+
+.logo-catt {
+    flex-shrink: 0;
+    width: auto;
+    height: 100%;
+}
+
+.p-catt {
+    margin-left: 5%;
+    font-size: 1.4vw; /* Center the text within its container */
+}
+
+
+
+
+
+
+
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #c3242e;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.select-style {
+    position: relative;
+    cursor: pointer;
+}
+
+.container-form {
+    background-color: #c3242f;
+}
+
+
+
+h6 {
+    font-size: 24px;
+    text-align: center;
+}
+
+
+.but-info {
+    width: 100%;
+    height: 300px;
+
+}
+
+.text-gell,.text-la {
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.la-nostra-content,
+.la-nostra-content-2,
+.la-nostra-content-3,
+.la-nostra-content-4,
+.la-nostra-content-5 {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.text-la-con,
+.text-la-con-2,
+.text-la-con-3,
+.text-la-con-4,
+.text-la-con-5 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    margin: auto;
+    font-size: 1.6vw;
+    width: 50%;
+}
+
+.text-la-con-4 {
+    padding: 0;
+}
+
+.img-la-nostra,
+.img-la-nostra-2,
+.img-la-nostra-3,
+.img-la-nostra-4,
+.img-la-nostra-5 {
+    float: right;
+    width: 50%;
+    position: relative;
+    display: grid;
+}
+
+
+
+
+.img-la-nostra img,
+.img-la-nostra-2 img,
+.img-la-nostra-3 img,
+.img-la-nostra-4 img,
+.img-la-nostra-5 img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+.la-nostra-content {
+    border-top: 1px solid #c3242e;
+    border-left: 1px solid #c3242e;
+}
+
+.la-nostra-content-2 {
+    border-right: 1px solid #c3242e;
+    border-bottom: 1px solid #c3242e;
+}
+
+.la-nostra-content-3 {
+    border-bottom: 1px solid #c3242e;
+    border-left: 1px solid #c3242e;
+}
+
+.la-nostra-content-4 {
+    border-bottom: 1px solid #c3242e;
+    border-top: 1px solid #c3242e;
+    border-right: 1px solid #c3242e;
+}
+
+.text-la-con,
+.text-la-con-2,
+.text-la-con-3 {
+    padding-bottom: 5%;
+}
+
+.button-container-2,
+.button-container-3,
+.button-container-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    position: absolute;
+    top: 57%;
+    padding-top: 1%;
+}
+
+.button-container button,
+.button-container-2 button,
+.button-container-3 button,
+.button-container-4 button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #c3242f;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #c3242f;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.button-container button:hover,
+.button-container-2 button:hover,
+.button-container-3 button:hover,
+.button-container-4 button:hover {
+    background-color: #c3242f;
+    color: #ffffff;
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+    .la-nostra-content,
+    .la-nostra-content-2,
+    .la-nostra-content-3,
+    .la-nostra-content-4,
+    .la-nostra-content-5 {
+        flex-direction: column;
+    }
+
+    .text-la-con,
+    .text-la-con-2,
+    .text-la-con-3,
+    .text-la-con-4,
+    .text-la-con-5 {
+        width: 100%;
+        text-align: center;
+        display: grid;
+        font-size: 22px;
+         /* Центрирование текста на маленьких экранах */
+    }
+
+    .img-la-nostra,
+    .img-la-nostra-2,
+    .img-la-nostra-3,
+    .img-la-nostra-4,
+    .img-la-nostra-5 {
+        width: 100%;
+        float: none;
+        order: -1; /* Изменение порядка, чтобы изображения шли сверху на маленьких экранах */
+    }
+
+    .button-container-2,
+    .button-container-3,
+    .button-container-4,
+    .button-container-5 {
+        top: auto;
+        position: static;
+        text-align: center; /* Центрирование кнопок на маленьких экранах */
+    }
+}
+
+
+
+
+
+
+.lr-nost {
+    margin-top: 10px;
+}
+
+.content-img-lr img {
+    width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+
+.form-map-2 {
+    display: none;
+    position: fixed;
+    top: 50%; /* Располагаем форму по вертикали по центру экрана */
+    left: 50%; /* Располагаем форму по горизонтали по центру экрана */
+    transform: translate(-50%, -50%); /* Центрируем форму */
+    z-index: 1000; /* Устанавливаем высокий z-index, чтобы форма была поверх других элементов */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 37vw;
+    opacity: 0; /* Устанавливаем начальную прозрачность 0 */
+    transition: opacity 0.3s;
+}
+
+#form-2{
+    width: 14vw;
+}
+
+
+
+.container-form-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    height: 600px;
+    background-color: #c3242f;
+    border-radius: 5px;
+}
+
+.x-but-form {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #c3242f;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #c3242f;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.form-map-2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* Исходно уменьшенный размер */
+    z-index: 1000;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s, opacity 0.3s, visibility 0.3s, backdrop-filter 0.3s; /* Добавлено свойство backdrop-filter */
+}
+
+
+
+.form-map-2.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); /* Увеличиваем размер при появлении */
+    backdrop-filter: blur(5px); /* Постепенное применение размытия */
+}
+
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0); /* Исходно прозрачный фон */
+    backdrop-filter: blur(0); /* Исходно без размытия */
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none; /* Прозрачный для событий, чтобы не мешать кликам */
+    transition: background 0.3s, backdrop-filter 0.3s, opacity 0.3s; /* Плавные переходы */
+}
+
+.form-overlay.visible {
+    background: rgba(0, 0, 0, 0.3); /* Прозрачный фон с постепенным проявлением */
+    backdrop-filter: blur(5px); /* Постепенное применение размытия */
+    opacity: 1;
+}
+
+
+
+.input-inva {
+    cursor: pointer;
+}
+
+#button-submit:hover {
+    cursor: pointer;
+}
+
+
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Уменьшаем время перехода */
+}
+
+.btn:hover {
+    background-color: rgba(194, 36, 47, 0.8);
+    color: #fff;
+}
+
+
+.input-inva input[type="submit"] {
+    transition: box-shadow 0.2s ease-in-out; /* Добавляем анимацию при изменении тени */
+}
+
+.input-inva input[type="submit"]:hover {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3),
+                -1px -1px 3px rgba(0, 0, 0, 0.3),
+                inset 3px 3px 5px rgba(0, 0, 0, 0.3),
+                inset -3px -3px 5px rgba(0, 0, 0, 0.3); /* Устанавливаем тень при наведении */
+}
+
+#map {
+    width: 100%; /* Задаем ширину карты на 100% от родительского блока */
+    height: 600px;/* Задаем высоту карты на 100% от родительского блока */
+}
+
+.vse {
+    width: 100%;
+    height: 300px;
+    border-top: 1px solid #c3242e;
+}
+
+@media only screen and (max-width: 822px){
+    .container-form {
+        width: 100%;
+        
+    }
+    .form-map{
+        display: block;
+    }
+    .logo-catt-con {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        margin-left: 0%;
+        margin-bottom: 0%;
+    }
+    .container-contact{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .form-map-2 {
+        width: 75vw;
+
+    }
+    
+    #form-2{
+        width: 40vw;
+    }
+}
+
